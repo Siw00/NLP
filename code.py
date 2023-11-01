@@ -32,6 +32,25 @@ VAR_words_maxlength = VAR_S.keys()
 
 print("words in decreasing order of length are:",VAR_words_maxlength)
 
+#3b In Google Colab, develop a Simple Python Program to create  customerdatabase by key and value, example, Customer Id, Customer Name,Customer Address, Customer Phone
+var_customer_list=[]
+var_n=int(input("enter number of customers in the database: "))
+for i in range(0,var_n):
+  var1=[int(input()),input(),input(),int(input())]
+  var_customer_list.append(var1)
+print(var_customer_list)
+
+print("customer list",str(var_customer_list))
+var_dict={}
+for var2 in var_customer_list:
+  var_dict[var2[0]] = var2[1:]
+print(var_dict)
+
+import pandas as pd
+var_df=pd.DataFrame.from_dict(var_dict,orient='index')
+var_df
+var_df.to_csv("customer.csv")
+
 # 4A In Google Colab, develop a Simple Python Program for Creating Arguments,Mutable Arguments and Accepting Variable Arguments
 import nltk
 
